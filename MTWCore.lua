@@ -1,5 +1,5 @@
 	
-	--Mobsonme's Threat Warning--
+	--Mobsonme's Threat Warner--
 	--Initial private beta 
 	-- NOT FOR PUBLIC RELEASE
 	--Announces when attacks are failed at the start of combat to say/raid.
