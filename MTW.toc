@@ -1,5 +1,5 @@
 ## Interface: 12000
-## Title: |cffA88059Mobsonme's |cffffffffThreat Announcer
+## Title: |cffA88059Mobsonme's |cffffffffThreat Warner
 ## Notes: Smart Prot Tanking
 ## Author: Mobsonme (K3)
 ## SavedVariables: MTWtimer

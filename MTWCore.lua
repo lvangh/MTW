@@ -7,6 +7,7 @@
 	--ToDo: 
 	--Add druid support
 	--Add party/raid/solo options
+	--Add CLI option for enabling solo announcement 
 		
 	--InProgress:
 	--Add adjustment of timers by second with CLI
@@ -14,7 +15,7 @@
 	--Add dodge/parry to missing auto attack checks
 	
 --Some globals
-local MTWversion = 0.32
+local MTWversion = 0.33
 local ecTimer = 0
 local MTWtargetlevel = UnitLevel('target')
 local threatsayEn = 1
@@ -28,8 +29,6 @@ function MTWPrint(msg)
 	DEFAULT_CHAT_FRAME:AddMessage("|cffA88059MTW:".."|cffffffff "..(msg))
 	
 end
-
-
 
 function MTW_OnLoad()
 	if UnitClass("player") == "Warrior" then
@@ -71,9 +70,7 @@ function MTW_SlashCommand(msg)
 --  end
 
 	if UnitClass("player") == "Warrior" then
-	--	if command == "timer" and MTWtimer == nil or MTWtimer == "" then
-		--	echo("Enter a number in seconds after 'timer'.")
-		--end
+
 		if command == "timer" and MTWtimeroption ~= "" and tonumber(MTWtimeroption) ~= nil then 
 				if MTWtimer > 6 then
 					MTWPrint("Warning: a long duration is not recommended. \nCustom time entered. Changing announce timer to: "..MTWtimer)
@@ -96,11 +93,10 @@ function MTW_SlashCommand(msg)
 			MTWPrint("MTW: Enabled")
 			threatsayEn = 1
 		else
-			MTWPrint("Mobsonme's Threat Warner.\n Change the initial combat timer duration with '/mtw timer #' (# in seconds), or enter: \n '/mtw short' (2s), '/mtw medium' (3s), or '/mtw long' (5s). \n '/mtw on' to enable, '/mtw off' to disable.")
+			MTWPrint("Mobsonme's Threat Warner. Current timer is ["..MTWtimer.."s]\n Change the initial combat timer duration with '/mtw timer #' (# in seconds), or enter: \n '/mtw short' (2s), '/mtw medium' (3s), or '/mtw long' (5s). \n '/mtw on' to enable, '/mtw off' to disable.")
 		end
 	end
 end
-
 
 function MTWmyKTMThreat()
 	if IsAddOnLoaded("KLHThreatMeter") then
@@ -114,7 +110,6 @@ function MTWmyKTMThreat()
   
 end
 	
-		
 function MTW_OnEvent(event)
 
 	local soloannounceEn = 0 --"1" to "say" while not in a group, 0 for off. 
@@ -125,11 +120,6 @@ function MTW_OnEvent(event)
 		
 	end
 	
-	--Shortens announcement window if in a raid and ragets are not bosses
-	--if UnitInRaid('player') and MTWtargetlevel < 61 and UnitClass("player") == "Warrior" then
-	--	threatsaytimer = 2
-	--end	
-		
 	if event == "PLAYER_ENTERING_WORLD" then
 	
 		--init timer var for first installation
@@ -139,7 +129,7 @@ function MTW_OnEvent(event)
 			else
 				tonumber(MTWtimer)
 			end
-		MTWPrint("Mobsonme's Threat Warner "..MTWversion.." LOADED. Type '/mtw' for help. Current timer is ["..MTWtimer.."]. Solo announcement is : "..soloannounceEn)
+		MTWPrint("Mobsonme's Threat Warner "..MTWversion.." beta LOADED. Type '/mtw' for help. Current timer is ["..MTWtimer.."s]. Solo announcement is : "..soloannounceEn)
 			if not IsAddOnLoaded("KLHThreatMeter") then 
 				MTWPrint("|cffFF0000Warning: |cffffffffKTM does not appear to be installed/enabled. Recommended for this addon to work.")
 			end
@@ -212,12 +202,9 @@ function MTW_OnEvent(event)
 			end
 		end
 	end
+		
 	
-	
-	
-	
-	
-	--Begin start of combat threat failure announcements (special attacks: miss/dodge/parry only)
+	--Begin start of combat threat failure announcements (SPECIAL attacks: miss/dodge/parry only)
 	
 	if event == "CHAT_MSG_SPELL_SELF_DAMAGE" and UnitClass("player") == "Warrior" and threatsayEn == 1 then
 			 
@@ -281,5 +268,3 @@ function MTW_OnEvent(event)
 	end
 end
 	
-	
-
