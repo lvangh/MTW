@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 MOBSONME'S THREAT FAIL ANNOUNCER
+=======
+MOBSONME'S THREAT FAIL ANNOUNCER 0.32
+>>>>>>> f46b4f0ffee0e8836831c9fe4b860f88a6a87b5b
 
 ##Version history
 
