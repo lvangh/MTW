@@ -2,6 +2,7 @@
 ## Title: |cffA88059Mobsonme's |cffffffffThreat Announcer
 ## Notes: Smart Prot Tanking
 ## Author: Mobsonme (K3)
+## SavedVariables: MTWtimer
 ## DefaultState: enabled
 MTW.xml
 
