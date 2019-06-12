@@ -1,0 +1,7 @@
+## Interface: 12000
+## Title: |cffA88059Mobsonme's |cffffffffThreat Announcer
+## Notes: Smart Prot Tanking
+## Author: Mobsonme (K3)
+## DefaultState: enabled
+MTW.xml
+
