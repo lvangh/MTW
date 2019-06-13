@@ -190,7 +190,7 @@ function MTW_OnEvent(event)
 				if (cStartd - ecTimer <= MTWtimer) then
 					if (GetNumRaidMembers() > 0) then
 					SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
-					SendChatMessage("My opening auto attackwas dodged! My threat is: "..MTWmyKTMThreat())
+					SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat())
 					elseif (GetNumPartyMembers() > 0) then	
 					SendChatMessage("My opening auto attackwas dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
 					elseif soloannounceEn == 1 then
