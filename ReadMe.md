@@ -10,7 +10,7 @@ If an autoattack or special is missed, dodged, or parried in the start of a figh
 
 When an attack failure occurs, an announcement is made into the /say/party/raid (RW for bosses toggle as well) to notify the raid, along with the tank's current threat value pulled from KTM 17.x. 
 
-This announcement is based off a customizable timer that starts when the player enters combat. When the timerends, the warnings stop until the next time a player enters combat. 
+This announcement is based off a customizable timer that starts when the player enters combat. When the timer ends, the warnings stop until the next time a player enters combat. 
 
 #### Use
 Type /mtw in game to see the menu.
