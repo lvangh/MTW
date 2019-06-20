@@ -15,7 +15,10 @@ This announcement is based off a customizable timer that starts when the player 
 #### History of the add-on / about author
 I originally played Classic from 2004-2007 on Blackrock US.  In 2018, I found Kronos 3 and decided to revisit WoW. I have played with a handful of guilds as an OT/MT since K3 release. I found that it would be helpful to notify other players in the raid of critical threat failures. 
 
-![Alt text](images/mtw.jpg?raw=true "Title")
+![Alt text](images/mobs.jpg?raw=true "Mobsonme K3")
+
+
+![Alt text](images/mtw.jpg?raw=true "Slash command /mtw")
 
 #### Installation
 - Download the add-on here, then save and extract the .zip file contents into `WoW/Interface/AddOns/`.
