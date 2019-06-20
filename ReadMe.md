@@ -1,6 +1,6 @@
 
-## MOBSONME'S THREAT FAIL WARNER
-### Version history
+### MOBSONME'S THREAT FAIL WARNER
+#### Version history
 
 0.33 6/12/2019
 Now has persistant timer settings with account SavedVariable file.
