@@ -1,6 +1,6 @@
 
 ### MOBSONME'S THREAT WARNER
-(This add-on is in BETA. More features may come and some bugs may exist.)
+(This add-on is in BETA. More features may come and some bugs may exist. Currently only works with the WARRIOR class.)
 
 This add-on was created for Vanilla WoW 1.12. 
 
