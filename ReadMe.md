@@ -1,8 +1,11 @@
 
 ### MOBSONME'S THREAT WARNER
+(This add-on is in BETA. More features may come and some bugs may exist.)
+
+This add-on was created for Vanilla WoW 1.12. 
 
 
-This add-on was created for Vanilla WoW 1.12.
+
 
 It is designed with tanks in mind to handle rare situaitons where threat production failure is critical in the first few moments of a fight. 
 
@@ -34,7 +37,7 @@ Type /mtw in game to see the menu.
 - Rename `MTW-master` to `MTW`
 
 #### History of the add-on / about author
-I originally played Classic from 2004-2007 on Uther and Blackrock US. I mained protection warrior through TBC.  In 2018, I found Kronos 3 and decided to revisit WoW. I have played with a handful of guilds as an OT/MT since K3 release. I found that it would be helpful to notify other players in the raid of critical threat failures. 
+I originally played Classic from 2004-2007 on Uther and Blackrock US. I mained protection warrior through TBC.  In 2018, I found Kronos 3 and decided to revisit WoW. I have played with a handful of guilds as an OT/MT since K3 release. I found that it would be helpful to notify other players in the raid of critical threat failures and started work on this project. 
 
 ![Alt text](images/mobs.png?raw=true "Mobsonme K3")
 
