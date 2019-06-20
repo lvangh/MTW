@@ -1,5 +1,5 @@
 
-### MOBSONME'S THREAT FAIL WARNER
+### MOBSONME'S THREAT WARNER
 
 
 This add-on was created for Vanilla WoW 1.12.
@@ -16,6 +16,12 @@ This announcement is based off a customizable timer that starts when the player 
 Type /mtw in game to see the menu.
 
 ![Alt text](images/mtw.jpg?raw=true "Slash command /mtw")
+
+Enabled the addon by typing '/mtw on' or '/mtw off' to disable
+Change the timer by typing 'mtw timer 3'
+Enable Raid Warning mode (bosses only) by typing '/mtw bossrw on' or '/mtw bossrw off'
+Enable solo announcement mode (announces in /say) - useful for possible situation out in the world when trying to help tank something.
+
 
 #### Installation
 - Download the add-on here, then save and extract the .zip file contents into `WoW/Interface/AddOns/`.
