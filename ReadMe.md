@@ -7,9 +7,9 @@ This add-on was created for Vanilla WoW 1.12.
 
 
 
-It is designed with tanks in mind to handle rare situations where threat production failure is critical in the first few moments of a fight. 
+It is designed with tanks in mind to handle rare situations where threat production failure is critical in the first few seconds of a fight. 
 
-If an autoattack or special is missed, dodged, or parried early in combat, this can spell disaster for the raid in situations where both speed OR caution is the goal. 
+If an autoattack or special is missed, dodged, or parried very early in combat, this can spell disaster for the raid in situations where both speed OR caution is the goal. 
 
 When an attack failure occurs, an announcement is made into the /say/party/raid (RW for bosses toggle as well) to notify the raid, along with the tank's current threat value pulled from KTM 17.x. 
 
