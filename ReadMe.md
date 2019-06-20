@@ -1,5 +1,5 @@
 
-### MOBSONME'S THREAT FAIL WARNER
+### MOBSONME'S THREAT WARNER
 
 
 This add-on was created for Vanilla WoW 1.12.
@@ -12,17 +12,28 @@ When an attack failure occurs, an announcement is made into the /say/party/raid 
 
 This announcement is based off a customizable timer that starts when the player enters combat. When the timerends, the warnings stop until the next time a player enters combat. 
 
+#### Use
+Type /mtw in game to see the menu.
+
+![Alt text](images/mtw.jpg?raw=true "Slash command /mtw")
+
+- Enable the addon by typing `/mtw on` or /`mtw off` to disable
+- Change the timer by typing `/mtw timer 3`
+- Enable solo announcement mode by typing `/mtw solo on` or `/mtw solo off` (announces in /say) - useful for possible situation out in the world when trying to help tank something.
+- Enable Raid Warning mode (bosses only) by typing `/mtw bossrw on` or `/mtw bossrw off`
+
+![Alt text](images/mtwinaction.jpg?raw=true "Slash command /mtw")
+
+
+#### Installation
+- Download the add-on here, then save and extract the .zip file contents into `WoW/Interface/AddOns/`.
+- Rename `MTW-master` to `MTW`
+
 #### History of the add-on / about author
 I originally played Classic from 2004-2007 on Blackrock US.  In 2018, I found Kronos 3 and decided to revisit WoW. I have played with a handful of guilds as an OT/MT since K3 release. I found that it would be helpful to notify other players in the raid of critical threat failures. 
 
 ![Alt text](images/mobs.png?raw=true "Mobsonme K3")
 
-
-![Alt text](images/mtw.jpg?raw=true "Slash command /mtw")
-
-#### Installation
-- Download the add-on here, then save and extract the .zip file contents into `WoW/Interface/AddOns/`.
-- Rename `MTW-master` to `MTW`
 
 #### Version history
 0.35 6/19/2019
