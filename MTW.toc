@@ -1,8 +1,8 @@
 ## Interface: 12000
 ## Title: |cffA88059Mobsonme's |cffffffffThreat Warner
-## Notes: Smart Prot Tanking
+## Notes: Smart Tanking
 ## Author: Mobsonme (K3)
-## SavedVariables: MTWtimer
+## SavedVariables: MTWtimer,MTWbossOnly,MTWisEnabled,MTWsoloEnabled,MTWbossrwEN
 ## DefaultState: enabled
 MTW.xml
 
