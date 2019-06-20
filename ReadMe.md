@@ -17,26 +17,29 @@ I originally played Classic from 2004-2007 on Blackrock US.  In 2018, I found Kr
 
 ![Alt text](mtw.jpg?raw=true "Title")
 
+#### Installation
+- Download the add-on here, then save and extract the .zip file contents into `WoW/Interface/AddOns/`.
+- Rename `MTW-master` to `MTW`
 
 #### Version history
 0.35 6/19/2019
--New SavedVariables (per account)
--New persistent settings for enabling/disabling addon, enabling RW mode, and enabling solo announcement mode.
--Status of new options is reflected in command line '/mtw'
--Removed 'short/medium/long as these are subjective. Recommended timer is 3.
--Alpha test for resetting timer on Ony phase 3 (not working yet)
+- New SavedVariables (per account)
+- New persistent settings for enabling/disabling addon, enabling RW mode, and enabling solo announcement mode.
+- Status of new options is reflected in command line '/mtw'
+- Removed 'short/medium/long as these are subjective. Recommended timer is 3.
+- Alpha test for resetting timer on Ony phase 3 (not working yet)
 
 0.33 6/12/2019
-Now has persistant timer settings with account SavedVariable file.
-Added command line options for timer and some various defaults (short, medium, long).
-Added KTM checker.
-Added auto attack parry/dodge events.
-Added current timer report to /ktm
-Removed message spam prevention timer for console messages.
+- Now has persistant timer setting with account SavedVariable file.
+- Added command line options for timer and some various defaults (short, medium, long).
+- Added KTM checker.
+- Added auto attack parry/dodge events.
+- Added current timer report to /ktm
+- Removed message spam prevention timer for console messages.
 
 0.1 
 INITIAL PRIVATE RELEASE 6/11/2019
-Warns party/group/raid when initial attacks fail at the start of combat
+- Warns party/group/raid when initial attacks fail at the start of combat
 
 
 
