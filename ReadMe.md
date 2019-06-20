@@ -17,10 +17,10 @@ Type /mtw in game to see the menu.
 
 ![Alt text](images/mtw.jpg?raw=true "Slash command /mtw")
 
-Enable the addon by typing `/mtw on` or /`mtw off` to disable
-Change the timer by typing `mtw timer 3`
-Enable Raid Warning mode (bosses only) by typing `/mtw bossrw on` or `/mtw bossrw off`
-Enable solo announcement mode by typing `/mtw solo on` or `/mtw solo off` (announces in /say) - useful for possible situation out in the world when trying to help tank something.
+- Enable the addon by typing `/mtw on` or /`mtw off` to disable
+- Change the timer by typing `mtw timer 3`
+- Enable solo announcement mode by typing `/mtw solo on` or `/mtw solo off` (announces in /say) - useful for possible situation out in the world when trying to help tank something.
+- Enable Raid Warning mode (bosses only) by typing `/mtw bossrw on` or `/mtw bossrw off`
 
 
 #### Installation
