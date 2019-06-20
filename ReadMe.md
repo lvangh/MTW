@@ -22,7 +22,7 @@ Type /mtw in game to see the menu.
 - Enable solo announcement mode by typing `/mtw solo on` or `/mtw solo off` (announces in /say) - useful for possible situation out in the world when trying to help tank something.
 - Enable Raid Warning mode (bosses only) by typing `/mtw bossrw on` or `/mtw bossrw off`
 
-![Alt text](images/mtwinaction.jpg?raw=true "Slash command /mtw")
+![In action](images/mtwinaction.png?raw=true "My attack failed!")
 
 
 #### Installation
