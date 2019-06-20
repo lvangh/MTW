@@ -6,11 +6,11 @@ This add-on was created for Vanilla WoW 1.12.
 
 It is designed with tanks in mind to handle rare situaitons where threat is critical in the first few moments of a fight. 
 
-If an autoattack or special is missed, dodged, or parried in the start of a fight, this can spell disaster for the raid in situations where both speed OR caution is the goal. 
+If an autoattack or special is missed, dodged, or parried early in combat, this can spell disaster for the raid in situations where both speed OR caution is the goal. 
 
 When an attack failure occurs, an announcement is made into the /say/party/raid (RW for bosses toggle as well) to notify the raid, along with the tank's current threat value pulled from KTM 17.x. 
 
-This announcement is based off a customizable timer that starts when the player enters combat. When the timerends, the warnings stop until the next time a player enters combat. 
+This announcement is based off a customizable timer that starts when the player enters combat. When the timer ends, the warnings stop until the next time a player enters combat. 
 
 #### Use
 Type /mtw in game to see the menu.
@@ -48,8 +48,8 @@ I originally played Classic from 2004-2007 on Blackrock US.  In 2018, I found Kr
 - Added command line options for timer and some various defaults (short, medium, long).
 - Added KTM checker.
 - Added auto attack parry/dodge events.
-- Added current timer report to /ktm
-- Removed message spam prevention timer for console messages.
+- Added current timer report to /mtw
+- Removed dev message spam prevention timer for console messages.
 
 0.1 
 INITIAL PRIVATE RELEASE 6/11/2019
