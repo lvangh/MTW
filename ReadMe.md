@@ -48,8 +48,8 @@ I originally played Classic from 2004-2007 on Blackrock US.  In 2018, I found Kr
 - Added command line options for timer and some various defaults (short, medium, long).
 - Added KTM checker.
 - Added auto attack parry/dodge events.
-- Added current timer report to /ktm
-- Removed message spam prevention timer for console messages.
+- Added current timer report to /mtw
+- Removed dev message spam prevention timer for console messages.
 
 0.1 
 INITIAL PRIVATE RELEASE 6/11/2019
