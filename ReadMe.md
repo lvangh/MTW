@@ -12,6 +12,8 @@ When an attack failure occurs, an announcement is made into the /say/party/raid 
 
 This announcement is based off a customizable timer that starts when the player enters combat. When the timer ends, the warnings stop until the next time a player enters combat. 
 
+2nd or 3rd off tanks and DPS warriors may want to turn the add-on OFF when not main tanking.
+
 #### Use
 Type /mtw in game to see the menu.
 
