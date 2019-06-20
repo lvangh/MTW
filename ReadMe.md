@@ -10,7 +10,7 @@ If an autoattack or special is missed, dodged, or parried in the start of a figh
 
 When an attack failure occurs, an announcement is made into the /say/party/raid (RW for bosses toggle as well) to notify the raid, along with the tank's current threat value pulled from KTM 17.x. 
 
-This announcement is based off a customizable timer that starts when the player enters combat. So let's say you start to attack a raidb oss and you get a miss/dodge/parry, the raid will be notified to potentially slow down. 
+This announcement is based off a customizable timer that starts when the player enters combat. When the timerends, the warnings stop until the next time a player enters combat. 
 
 #### History of the add-on / about author
 I originally played Classic from 2004-2007 on Blackrock US.  In 2018, I found Kronos 3 and decided to revisit WoW. I have played with a handful of guilds as an OT/MT since K3 release. I found that it would be helpful to notify other players in the raid of critical threat failures. 
