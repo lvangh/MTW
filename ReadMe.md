@@ -43,6 +43,9 @@ I originally played Classic from 2004-2007 on Uther and Blackrock US. I mained p
 
 
 #### Version history
+0.37 6/21/2019
+- Attempt to stop messages on player targets (duel, PVP etc)
+
 0.35 6/19/2019
 - New SavedVariables (per account)
 - New persistent settings for enabling/disabling addon, enabling RW mode, and enabling solo announcement mode.
