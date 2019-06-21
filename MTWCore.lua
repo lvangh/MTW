@@ -17,7 +17,7 @@
 	--Add adjustment of timers in seconds with CLI
 	--add save var timer support
 	--add saved varsolo announce timer + CLI
-	--stop announcements on players
+	--stop announcements on player targets
 		
 	--Done
 	--Stop loading on world change
@@ -25,7 +25,7 @@
 	--Move welcome message to "VARIABLES_LOADED"
 	
 	--Some globals
-	local MTWversion = 0.36
+	local MTWversion = 0.37
 	local ecTimer = 0
 	local MTWtargetlevel = UnitLevel('target')
 	local MTWplayername,_ = UnitName('player')
@@ -274,16 +274,12 @@ function MTW_OnEvent(event)
 			
 	end
 	
-	if event == "PLAYER_ENTERING_WORLD" then
 	
-	end
-	
---stop messages from occuring on players
---local MTWuipc = UnitPlayerControlled("target")
-	
+	--Unused
+	--if event == "PLAYER_ENTERING_WORLD" then
+	--end
 	
 
-	
 		--Begin start of combat threat failure announcements (AUTO ATTACK "miss" ONLY - below is spells). 
 		if event == "CHAT_MSG_COMBAT_SELF_MISSES" and UnitClass("player") == "Warrior" and MTWisEnabled == 1 and (not UnitPlayerControlled("target")) then
 			
