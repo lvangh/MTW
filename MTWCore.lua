@@ -388,15 +388,15 @@ function MTW_OnEvent(event)
 				local cStartd = GetTime();
 					if (cStartd - ecTimer <= MTWtimer) --[[and UnitInRaid("player") or pip > 0]] then
 						if (GetNumRaidMembers() > 0) then
-						SendChatMessage("Opening  "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening  "..sndodge.." dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening "..sndodge.." dodged! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening "..sndodge.." dodged! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then	
-						SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening "..sndodge.." dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening "..sndodge.." dodged! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("USING CHAT_MSG_SPELL_SELF_DAMAGE SPECIAL DODGE")
 						
