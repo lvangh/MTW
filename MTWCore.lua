@@ -1,10 +1,14 @@
 	
 	--Mobsonme's Threat Warner--
+	--May 2019 
+	--Discord efnetdoom2#1795
+	--Kronos Wow / Atiesh Classic 
 	--Initial private beta 
 	-- NOT FOR PUBLIC RELEASE
 	--Announces when attacks are failed at the start of combat to say/raid.
 	
 	--ToDo: 
+	--Add custom string variable option (11/2020)
 	--Add druid support
 	--Add party/raid/solo options
 	--Add GUI
@@ -57,16 +61,16 @@ function MTWmyKTMThreat()
   
 end
 
+--
 function MTWBossCheck()
 local mtib = UnitLevel('target')
 
-	if (mtib == 63 or mtib == -1) and MTWbossrwEN == 1 then
+	if mtib == -1 and MTWbossrwEN == 1 then
 		return true
 	else
 		return false
 	end
 end
-
 
 function MTW_OnLoad()
 	if UnitClass("player") == "Warrior" then
@@ -84,7 +88,6 @@ function MTW_OnLoad()
 
 end
 
-
 function MTW_SlashCommand(msg)
 
 	if UnitClass("player") == "Warrior" then
@@ -95,7 +98,8 @@ function MTW_SlashCommand(msg)
 	 local _, _, command, MTWoption = string.find(msg, "([%w%p]+)%s*(.*)$")
 	 --local timeroption = nil
 	
-	--?? experiment
+	
+	--[[ experiment
 	local MTWCmdList = {
 	"on",
 	"off",
@@ -103,7 +107,7 @@ function MTW_SlashCommand(msg)
 	"medium",
 	"long",
 	"solo",
-	}
+	}]]
 	
 	--Converts passed timer option to new number var  
 	if command == "timer" and command ~= nil and MTWoption ~= nil and tonumber(MTWoption) ~= nil then
@@ -126,24 +130,13 @@ function MTW_SlashCommand(msg)
    -- command = string.lower(command);
 --  end
 
-	
 		
-	--[[	if command == "bossonly" and command ~= nil then
-		MTWPrint("L63 and ?? (boss) only mode enabled.")
-		MTWbossOnly = 1
-		end
-		
-		if command == "bosstrash" and command ~= nil then
-		MTWPrint("Boss and trash mode enabled.")
-		MTWbossOnly = 0
-		end]]
-	
 		if command == "timer" and MTWoption ~= "" and tonumber(MTWoption) ~= nil then 
-				if MTWtimer > 5 then
-					MTWPrint("Warning: A long duration is not recommended. Recommended timer is 3. \nCustom time entered.  Changing announce timer to: "..MTWtimer)
-				else
-					MTWPrint("Custom time entered. Changing announce timer to: "..MTWtimer.."s")
-				end
+			if MTWtimer > 5 then
+				MTWPrint("Warning: A long duration is not recommended. Recommended timer is 3. \nCustom time entered.  Changing announce timer to: "..MTWtimer)
+			else
+				MTWPrint("Custom time entered. Changing announce timer to: "..MTWtimer.."s")
+			end
 		elseif command == "short" then
 			MTWtimer = 2
 			MTWPrint("Changing announce timer to 'short' : 2 seconds. ")
@@ -184,7 +177,7 @@ function MTW_SlashCommand(msg)
 		MTWPrint("/mtw timer #  - (# in seconds) Change the initial combat timer duration.")
 		--MTWPrint("Or enter: [/mtw short] (2s), [/mtw medium] (3s), or [/mtw long] (5s)")
 		MTWPrint("/mtw solo on / off  - Enable or disable announcements when not in a group.")
-		MTWPrint("/mtw bossrw on / off  - Enable raid warning on bosses and 63+ mobs.")
+		MTWPrint("/mtw bossrw on / off  - Enable 'Raid Warning' on bosses.")
 		end
 	end
 end
@@ -204,8 +197,14 @@ function MTW_OnEvent(event)
 		ecTimer = GetTime()
 		echo("ony phase 3 test")
 		end
+		if (string.find(arg1, "Well done, my minions")) then
+		ecTimer = GetTime() + 9
+		echo("ony phase 3 test")
+		end
 	end
 
+	
+	
 	
 	--Global enter combat timer
     if event == "PLAYER_REGEN_DISABLED" and UnitClass("player") == "Warrior" then
@@ -253,7 +252,7 @@ function MTW_OnEvent(event)
 			if MTWisEnabled == nil then
 				MTWisEnabled = 1
 			else
-				tonumber(MTWbossOnly)
+				tonumber(MTWisEnabled)
 			end
 			if MTWsoloEnabled == nil then
 				MTWsoloEnabled = 0
@@ -289,15 +288,15 @@ function MTW_OnEvent(event)
 				local cStarta = GetTime();
 					if (cStarta - ecTimer <= MTWtimer) then
 						if (GetNumRaidMembers() > 0) then	
-						SendChatMessage("My opening auto attack missed! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("My opening auto attack missed! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening auto missed! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening auto missed! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("My opening auto attack missed! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening auto missed! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then			
-						SendChatMessage("My opening auto attack missed! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening auto missed! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("My opening auto attack missed! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening auto missed! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("USING CHAT_MSG_SPELL_SELF_DAMAGE NEW AUTO MISS")				
 					end
@@ -318,15 +317,15 @@ function MTW_OnEvent(event)
 					local cStarta = GetTime();
 					if (cStarta - ecTimer <= MTWtimer) then
 						if (GetNumRaidMembers() > 0) then	
-						SendChatMessage("My opening auto attack was parried! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("My opening auto attack was parried! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening auto parried! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening auto parried! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("My opening auto attack was parried! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening auto parried! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then			
-						SendChatMessage("My opening auto attack was parried! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening auto parried! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("My opening auto attack was parried! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening auto parried! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("USING CHAT_MSG_SPELL_SELF_DAMAGE NEW AUTO PARRY")				
 					end
@@ -336,15 +335,15 @@ function MTW_OnEvent(event)
 					local cStartd = GetTime();
 					if (cStartd - ecTimer <= MTWtimer) then
 						if (GetNumRaidMembers() > 0) then
-						SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening auto dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening auto dodged! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening auto dodged! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then	
-						SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening auto dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("My opening auto attack was dodged! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening auto dodged! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("CHAT_MSG_COMBAT_SELF_MISSES AUTO DODGE")
 						
@@ -371,15 +370,15 @@ function MTW_OnEvent(event)
 				local cStartm = GetTime()
 					if (cStartm - ecTimer <= MTWtimer) --[[and UnitInRaid("player") or pip > 0]] then
 						if (GetNumRaidMembers() > 0) then
-						SendChatMessage("My opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("My opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("My opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then	
-						SendChatMessage("My opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("My opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening "..snmiss.." missed! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("USING CHAT_MSG_SPELL_SELF_DAMAGE SPECIAL MISS")
 						
@@ -389,15 +388,15 @@ function MTW_OnEvent(event)
 				local cStartd = GetTime();
 					if (cStartd - ecTimer <= MTWtimer) --[[and UnitInRaid("player") or pip > 0]] then
 						if (GetNumRaidMembers() > 0) then
-						SendChatMessage("My opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("My opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening  "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("My opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then	
-						SendChatMessage("My opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("My opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening "..sndodge.." was dodged! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("USING CHAT_MSG_SPELL_SELF_DAMAGE SPECIAL DODGE")
 						
@@ -407,15 +406,15 @@ function MTW_OnEvent(event)
 				local cStartp = GetTime() 
 					if (cStartp - ecTimer <= MTWtimer) --[[and UnitInRaid("player") or pip > 0]] then
 						if (GetNumRaidMembers() > 0) then
-						SendChatMessage("My opening "..snparry.." was parried! My threat is: "..MTWmyKTMThreat(), "RAID")
-						SendChatMessage("My opening "..snparry.." was parried! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening "..snparry.." parried! My threat is: "..MTWmyKTMThreat(), "RAID")
+						SendChatMessage("Opening "..snparry.." parried! My threat is: "..MTWmyKTMThreat())
 						if MTWBossCheck() == true then
-							SendChatMessage("My opening "..snparry.." was parried! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
+							SendChatMessage("Opening "..snparry.." parried! My threat is: "..MTWmyKTMThreat(),"RAID_WARNING")
 						end
 						elseif (GetNumPartyMembers() > 0) then	
-						SendChatMessage("My opening "..snparry.." was parried! My threat is: "..MTWmyKTMThreat(), "PARTY")
+						SendChatMessage("Opening "..snparry.." parried! My threat is: "..MTWmyKTMThreat(), "PARTY")
 						elseif MTWsoloEnabled == 1 then
-						SendChatMessage("My opening "..snparry.." was parried! My threat is: "..MTWmyKTMThreat())
+						SendChatMessage("Opening "..snparry.." parried! My threat is: "..MTWmyKTMThreat())
 						end
 						--MPDebug("USING CHAT_MSG_SPELL_SELF_DAMAGE SPECIAL PARRY")
 						
