@@ -1,6 +1,7 @@
 
 ### MOBSONME'S THREAT WARNER
 Last major revision June 2019. 
+
 Last minor 11/2020
 (This add-on is in BETA. More features may come and some bugs may exist. Currently only works with the WARRIOR class.)
 
